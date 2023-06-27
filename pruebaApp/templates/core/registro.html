@@ -1,0 +1,67 @@
+{% extends 'core/layout.html' %}
+
+{% block content %}
+{% load static%}
+
+    <main>
+        <div class="container">
+            <div class="row">
+                <h4>Delivery</h4>
+
+                <form id="formulario">
+                    <div class="col-5">
+
+                        <div class="form-group">
+
+                            <label>Nombre</label>
+                            <input type="text" class="form-control" id="txtnombre" />
+
+                            <label>Apellido Paterno</label>
+                            <input type="text" class="form-control" id="txtapellidopaterno" />
+
+                            <label>Apellido Materno</label>
+                            <input type="text" class="form-control" id="txtapellidomaterno" />
+
+                            <label>Direccion</label>
+                            <input type="text" class="form-control" id="txtdireccion" />
+
+                            <label>Rut (Sin Puntos y con Guión)</label>
+                            <input type="text" class="form-control" id="txtrut" />
+
+                            <label>Telefono</label>
+                            <input type="text" class="form-control" id="txttelefono" />
+
+                            <label>Comuna</label>
+                            <select class="form-select"  id="cbxciudad"> 
+                                <option value ="0" selected>---Debe Seleccionar una Comuna</option>
+                                <optgroup label="Region Metropolitana">
+                                    <option value="1"> Maipu</option>
+                                    <option value="2"> Pudahuel</option>
+                                    <option value="3"> Las Condes</option>
+                                    <option value="4"> Providencia</option>
+                                    <option value="5"> Quinta Normal</option>
+                                </optgroup>
+                                <optgroup label="Region de Valparaiso">
+                                    <option value="6"> Quilpue</option>
+                                    <option value="7"> Belloto</option>
+                                    <option value="8"> Villa Alemana</option>
+                                    <option value="9"> Viña del Mar</option>
+                                    <option value="10"> Valparaiso</option>
+                                    <br>
+                                </optgroup>
+                            </select> <br>
+                            <label>Comentarios</label>
+                            <textarea class="form-control" id="txtcomentario"></textarea>
+
+
+                        </div><br>
+                        <div class="form-group">
+                            <button class="btn btn-success" id="btnenviar">Enviar</button>
+                        </div>
+
+
+
+
+    </main>
+
+{% endblock %}

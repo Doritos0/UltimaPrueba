@@ -1,0 +1,73 @@
+{% extends 'core/layout.html' %}
+
+{% block content %}
+{% load static%}
+
+  <div class="container-fluid">
+    <br>
+    <hr>
+    <center>
+      <img src='{% static "img/hamburguesa_vegana.png" %}' style="float:left; margin: 10px" width="300px" height="200px">
+      <br>
+      <h2>Hamburguesa Vegana</h2>
+      <br>
+      <table class="table-light">
+        <tr class="table-primary">
+          <th>Este producto Contiene</th>
+        </tr>
+        <tr class="table-success">
+          <td class="table-success">Tomate</td>
+        </tr>
+        <tr class="table-success">
+          <td class="table-success">Lechuga</td>
+        </tr>
+        <tr class="table-success">
+          <td class="table-success">Not Mayo</td>
+        </tr>
+        <tr class="table-success">
+          <td class="table-success">Pepinillos</td>
+        </tr>
+        <tr class="table-success">
+          <td class="table-success">Hamburguesa Vegana</td>
+        </tr>
+      </table>
+      <br>
+      <br>
+      <div style="width: 60%;">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Informacion Nutricional</th>
+              <th scope="col">Por Producto</th>
+              <th scope="col">I.D.R %</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peso</td>
+              <td>213g</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Energía (Kcal)</td>
+              <td>562kcal</td>
+              <td>27g</td>
+            </tr>
+            <tr>
+              <td>Proteínas</td>
+              <td>28%</td>
+              <td>53%</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </center>
+    <hr>
+    <a href='{% url "productos" %}' style="margin-top: 5px; margin-bottom: 5px;">
+      <button class="btn btn-secondary">Volver</button>
+    </a>
+  </div>
+{% endblock %}
+
+</html>

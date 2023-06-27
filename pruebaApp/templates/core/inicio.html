@@ -1,0 +1,88 @@
+{% extends 'core/layout.html' %}
+
+{% block content %}
+{% load static%}
+    <main>
+        <div class="container">
+            <div id="carouselExample" class="carousel carousel-dark slide" style="height: 55%; width: 55%; margin: auto; ">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <a href='{% url "producto2" %}'><img src='{% static "img/hamburguesa_vegana.png" %}' width="1000px" height="560px" class="d-block w-100"
+                                alt="hamburguesa vegana"></a>
+                        <a href='{% url "producto2" %}' style="color: black; text-decoration: none;">
+                            <h2>Hamburguesa Vegana</h2>
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href='{% url "producto1" %}'><img src='{% static "img/hamburguesa.png" %}' class="d-block w-100"
+                                alt="Hamburguesa tradicional"></a>
+                        <a href='{% url "producto1" %}' style="color: black; text-decoration: none;">
+                            <h2>Hamburguesa Tradicional</h2>
+                        </a>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="prev" style="color:black">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="next" style="color:black">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="card" style="width: 40%; float: left; margin-left: 10px; margin-right: 10px;">
+                        <img src='{% static "img/hamburguesa.png" %}' width="300px" height="400px" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Hamburguesa Tradicional</h5>
+                            <a href='{% url "producto1" %}' class="btn btn-primary">Ir a producto</a>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 40%; float: right; margin-left: 10px; margin-right: 10px;">
+                        <img src='{% static "img/hamburguesa_vegana.png" %}' width="300x" height="400px" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Hamburguesa Vegana</h5>
+                            <a href='{% url  "producto2" %}' class="btn btn-primary">Ir a producto</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+        <div class="toast-container position-static">
+            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+              <div class="toast-header">
+                <img src="..." class="rounded me-2" alt="...">
+                <strong class="me-auto">Bootstrap</strong>
+                <small class="text-body-secondary">just now</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+              </div>
+              <div class="toast-body">
+                See? Just like this.
+              </div>
+            </div>
+          
+            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+              <div class="toast-header">
+                <img src="..." class="rounded me-2" alt="...">
+                <strong class="me-auto">Bootstrap</strong>
+                <small class="text-body-secondary">2 seconds ago</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+              </div>
+              <div class="toast-body">
+                Heads up, toasts will stack automatically
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+    </main>
+
+{% endblock %}

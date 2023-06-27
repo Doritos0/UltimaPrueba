@@ -1,0 +1,62 @@
+{% extends 'core/layout.html' %}
+
+{% block content %}
+{% load static%}
+        <div class="container">
+            <div class="row">
+            <div class="col-8">
+                <h1> Productos </h1>
+                <hr>
+                <div class="col-5 card" style=" float: right; margin-left: 10px; margin-right: 10px;">
+                    <img src='{% static "img/hamburguesa.png" %}' width="auto" height="250px"  class="card-img-top" alt="hamburguesa">
+                    <div class="card-body">
+                        <h5 class="card-title">Hamburguesa Tradicional</h5><div class="col-12">
+                            <div class="row">
+                                <h6 class="card-text">$5.990</h6>
+                                <div class="col-6">
+                                    <a href='{% url "producto1" %}' class="btn btn-primary">Ir al producto</a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="{% url 'agregar_tradicional' %}" class="btn btn-success">Agregar al Carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-5 card" style=" float: right; margin-left: 10px; margin-right: 10px;">
+                    <img src='{% static "img/hamburguesa_vegana.png" %}' width="auto" height="250px"  class="card-img-top" alt="hamburguesa_vegana">
+                    <div class="card-body">
+                        <h5 class="card-title">Hamburguesa Vegana</h5>
+                        <div class="col-12">
+                            <div class="row">
+                                <h6 class="card-text">$6.990</h6>
+                                <div class="col-6">
+                                    <a href='{% url "producto2" %}' class="btn btn-primary">Ir al producto</a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="{% url 'agregar_vegana' %}" class="btn btn-success">Agregar al Carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% for p in productos %}
+                <div class="col-5 card" style=" float: right; margin-left: 10px; margin-right: 10px; margin-top: 5px; margin-bottom: 5px;">
+                    <img src='../{{p.imagen}}' width="100px" height="100%" class="card-img-top" alt={{p.nom_prod}}>
+                    <div class="card-body">
+                        <h5 class="card-title">{{p.nom_prod}}</h5>
+                        <h6 class="card-text">${{p.precio}}</h6>
+                        <h6 class="card-text">{{p.Unidades}}</h6>
+                        <a href="{% url 'agregar' p.nom_prod %}" class="btn btn-success">Agregar al Carrito</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-4">
+                {% include "core/compra.html" %}
+
+            </div>
+        </div>
+{% endblock %}

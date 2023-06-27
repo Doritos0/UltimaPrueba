@@ -1,0 +1,35 @@
+{% extends 'core/layout.html' %}
+{% block content%}
+{% load static%}
+
+    <main>
+        <div class="container" style="display: flex;">
+            <div class="card" style="width: 45%; margin: 20px;">
+                <img src='{% static "img/local_1.jpg" %}' class="card-img-top" alt="Local 1">
+                <div class="card-body">
+                  <h5 class="card-title">P. Sherman, Calle Wallaby 42, Sidney</h5>
+                  <p class="card-text">Nuestro local cuenta con pedido delivery y para servir </p>
+                  <a href='{% url "local_1" %}' class="btn btn-secondary">Ver Horario</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 45%; margin: 20px;">
+                <img src='{% static "img/local_2.jpg" %}' class="card-img-top" alt="Local 2">
+                <div class="card-body">
+                  <h5 class="card-title">Curacavi Av. Ambrosio O'higgins</h5>
+                  <p class="card-text">Nuestro local cuenta con pedido delivery y para servir </p>
+                  <a href='{% url "local_2" %}' class="btn btn-secondary">Ver Horario</a>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+        
+        <br>
+        
+    </main>
+
+{% endblock %}
